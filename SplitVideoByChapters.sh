@@ -1,4 +1,4 @@
-#1 /bin/bash
+#!/bin/bash
 
 file=$(echo "$1" | awk -F '.' '{print $(NF-1)}')
 ext=$(echo "$1" | awk -F '.' '{print $(NF)}')
