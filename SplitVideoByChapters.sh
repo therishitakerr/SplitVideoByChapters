@@ -1,7 +1,7 @@
 #!/bin/bash
 
-file=$(echo "$1" | awk -F '.' '{print $(NF-1)}')
 ext=$(echo "$1" | awk -F '.' '{print $(NF)}')
+file=$(basename $1 .$ext)
 ffprobe -show_chapters "$1" | grep -i 'id=\|start_time\|end_time\|title' > chapters.txt
 
 while read chapter_id; do
